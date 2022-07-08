@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment
+  name: webapp-deployment-blue
   labels:
     app: webapp
 spec:
@@ -9,10 +9,12 @@ spec:
   selector:
     matchLabels:
       app: webapp
+      version: blue
   template:
     metadata:
       labels:
         app: webapp
+        version: blue
     spec:
       containers:
       - name: webapp
